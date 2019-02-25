@@ -3,31 +3,25 @@
 namespace App\Repositories;
 
 use App\Repositories\Interfaces\TrackInterface;
-use App\Models\Track; // This can be replaced with different data sources
+use App\Models\TrackRedis; // This can be replaced with different data sources
 
-class TrackRepository implements TrackInterface {
+class TrackRedisRepository implements TrackInterface {
  
     /**
      * Undocumented function
      *
      * @param array $columns
-     * @return array
+     * @return void
      */
     public function all($columns = array('*'))
     {
-        $tracks = Track::all();
 
-        if ($columns == ['*']) {
-            return $tracks->toArray();
-        }
-        return $tracks->pluck($columns)->toArray();
     }
  
     public function create(array $data) {
 
-        $track = Track::create($data);
-        $track->save();
-        return $track->toArray();
+        Track::
+        return $data;
 
     }
  

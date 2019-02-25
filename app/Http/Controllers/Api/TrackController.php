@@ -17,7 +17,10 @@ class TrackController extends Controller
     }
 
     /**
-     * Store a Track
+     * Undocumented function
+     *
+     * @param TrackStoreRequest $request
+     * @return Response json
      */
     public function store(TrackStoreRequest $request)
     {
