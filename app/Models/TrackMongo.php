@@ -5,8 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
 
-class Track extends Model
+class TrackMongo extends Model
 {
+    protected $connection = 'mongo';
     /**
      * The attributes that are mass assignable.
      *

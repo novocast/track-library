@@ -5,8 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
 
-class Track extends Model
+class TrackElastic extends Model
 {
+    protected $connection = 'elastic';
     /**
      * The attributes that are mass assignable.
      *

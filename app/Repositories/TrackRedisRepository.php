@@ -3,7 +3,7 @@
 namespace App\Repositories;
 
 use App\Repositories\Interfaces\TrackInterface;
-use App\Models\TrackRedis; // This can be replaced with different data sources
+use App\Models\TrackRedis as Track; // This can be replaced with different data sources
 
 class TrackRedisRepository implements TrackInterface {
  

@@ -3,7 +3,7 @@
 namespace App\Repositories;
 
 use App\Repositories\Interfaces\TrackInterface;
-use App\Models\TrackMongo; // This can be replaced with different data sources
+use App\Models\TrackMongo as Track; // This can be replaced with different data sources
 
 class TrackMongoRepository implements TrackInterface {
  

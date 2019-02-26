@@ -23,26 +23,28 @@ class TrackRepository implements TrackInterface {
         return $tracks->pluck($columns)->toArray();
     }
  
-    public function create(array $data) {
-
+    public function create(array $data) 
+    {
         $track = Track::create($data);
         $track->save();
         return $track->toArray();
-
     }
  
-    public function update(array $data, $id) {
-
-
+    public function update(array $data, $id) 
+    {
+        $track = Track::find($id)
+            ->update($data);
+        
+        return $track;
     }
 
-    public function show($id) {
-
-
+    public function show($id) 
+    {
+        return Track::find($id);
     }
  
-    public function delete($id) {
-
-
+    public function delete($id) 
+    {
+        return Track::find($id)->delete();
     }
 }

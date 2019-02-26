@@ -5,8 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
 
-class Track extends Model
+class TrackPostgres extends Model
 {
+    protected $connection = 'postgres';
     /**
      * The attributes that are mass assignable.
      *

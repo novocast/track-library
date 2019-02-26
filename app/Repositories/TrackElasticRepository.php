@@ -3,7 +3,7 @@
 namespace App\Repositories;
 
 use App\Repositories\Interfaces\TrackInterface;
-use App\Models\TrackElastic; // This can be replaced with different data sources
+use App\Models\TrackElastic as Track; // This can be replaced with different data sources
 
 class TrackElasticRepository implements TrackInterface {
  
