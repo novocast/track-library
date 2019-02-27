@@ -1,69 +1,33 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+# Track List
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+Track list is twofold, an educational repo to use as discussion points for Laravel and Platform Development, along side a database platform test. For research, we wanted to test the capacity of databases for our specific use case, which is querying an enormous database at a high capacity. This performance test will help determine the best way to achieve the desired results.
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
+### Points of Note
+The main benefit to using a framework such as laravel is the seperation of concerns easily available, and easy application of SOLID principles. 
+In this repo, examples of routing, models, repositories, validation, and more shows how this can be kept independant. Each segment will be outlined in detail before discussing at length the repository system used for testing database types.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+##### Routing
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications.
+[API Routes file](routes/api.php) - In Laravel, all requests are mapped with the help of routes. Basic routing routes the request to the associated controllers. In the above example, we are looking at API routes. _Within Laravel, you can specify multiple routes files which can handle various requirements of your application._
+The API routes file deals with API requests for us. They are stateless requests that use JSON Web Tokens for validation. All routes within this file are encompassed by this.
+Within this file I have provided examples or Route groups, resource routes, as well as a standard get route.
+> *Route Groups* - [Docs](https://laravel.com/docs/5.7/routing#route-groups) 
+Route groups allow you to share route attributes, such as middleware or namespaces, across a large number of routes without needing to define those attributes on each individual route. Shared attributes are specified in an array format as the first parameter to the `Route::group` method.
 
-## Learning Laravel
+> *Route Resources* 
+Route resources are a neat way to create CRUD methods for a resource. In our example we have a Tracks controller which handles CRUD requests for Tracks. The resource route automatically maps these methods. I've added a search method in the routes file just to show this as an example.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of any modern web application framework, making it a breeze to get started learning the framework.
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 1100 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+##### Request Models and Validation
+Thanks to Reflection, Laravel lets us Type hint in our controllers. We're using this in the Tracks controller to Type hint a specific request `app\Http\Requests\TrackStoreRequest.php` for our Track store repository. This Request Class extends `Illuminate\Foundation\Http\FormRequest` allowing us to define Validation `rules`.
+At an overview level, this gives the capability to abstract complex validation to a separate class. This keeps controllers lightweight and slim, and keeps a separation of concerns. This method is very extendable for any type of request to validate.
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for helping fund on-going Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell):
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
+##### Repositories
+In Laravel Repositories are often misused or overrated, but in this scenario there is a use case.
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### Testing Databases
+TBC
