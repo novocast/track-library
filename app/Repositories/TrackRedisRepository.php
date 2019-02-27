@@ -20,9 +20,6 @@ class TrackRedisRepository implements TrackInterface {
  
     public function create(array $data) {
 
-        Track::
-        return $data;
-
     }
  
     public function update(array $data, $id) {
