@@ -38,5 +38,37 @@ This database will be used as a hot table for recall only, ensuring it's optimis
 In this repository we will be seeding millions of records into various database systems. One large issue is that Faker, the library that generates a lot of our fake data is memory heavy. In order to combat this we'll use chunking to prevent issues.
 A seeder is requried for each database type and are executed by CLI.
 
+[TBC]
 
-TBC
+### Learning Resources
+There's many learning resources for laravel available that are great. _(Because it's so accessible, there's also loads that are a pile of crap)_. Any good ones found we can link in here to make keeping track of them a little easier.
+
+The best place to start is the Laravel Docs. They're informative, easy to follow and contain most of the basics:
+[Laravel Official Documentation](https://laravel.com/docs)
+
+Laravel's API Docs are also informative if you need specifics on a class or similar. I don't find myself reaching for it on a day to day basis:
+[Laravel API Documentation](https://laravel.com/api/5.8/index.html)
+
+Laravel offers Laracasts, which are more lesson/tutorial format teaching on the platform. Some are free, some are not.
+[Laracast Platform](https://laracasts.com/)
+
+In general, there are development principles that it would be good to keep in mind whilst we proceed. I'm personally not one for rigorously and blindly following principles, as often they are _overkill_ or simply destructive in a specific use case. I do think they are useful to think about during development at an overview level to help output more understandable and maintainable systems.
+
+>KISS :white_check_mark:, DRY :white_check_mark:, SOLID :white_check_mark:
+
+Personally, my thoughts are usually focused on creating a seperation of concerns, resusable, modular, uncoupled code. All other principles are nicities or for specific situations.
+With that in mind, here's a few articles I've found which typically subscribe to my way of thinking:
+
+Using a Service Layer to separate business logic from the application is a great way to separate concerns. It makes all separate components testable. And keeps code Simple and DRY.
+[Design Pattern : Service Layer with Laravel 5](https://m.dotdev.co/design-pattern-service-layer-with-laravel-5-740ff0a7b65f)
+
+Request Validation article describes the idea behind what is used in this repo, and talks about it in greater detail. This is a great way to separate concerns and keeps individual scripts simple.
+[The Smart Way To Handle Request Validation In Laravel 😎](https://medium.com/@kamerk22/the-smart-way-to-handle-request-validation-in-laravel-5e8886279271)
+
+Using SOLID Principles in PHP is a great way to rationalise code decisions into something simpler. This article gives the basics, but in a PHP format.
+[SOLID Principles in PHP](https://medium.com/prod-io/solid-principles-takeaways-ec0825a07247)
+
+
+
+--------------------------------
+Thanks
